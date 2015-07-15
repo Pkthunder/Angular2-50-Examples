@@ -1,28 +1,11 @@
-<html ng-app="nameApp">
-  <head>
-    <meta charset="utf-8">
-    <title>Angular.js Example</title>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
-    <script>
-      var nameApp = angular.module('nameApp', []);
-      nameApp.controller('NameCtrl', function ($scope){
-        $scope.firstName = 'John';
-
-        $scope.$watch('lastName', function(newValue, oldValue){
-          console.log('new value is ' + newValue);
-        });
-
-        setTimeout(function(){
-          $scope.lastName = 'Smith';
-        }, 1000);
-      });
-    </script>
-  </head>
-  <body ng-controller="NameCtrl">
-    First name:<input ng-model="firstName" type="text"/>
-    <br>
-    Last name:<input ng-model="lastName" type="text"/>
-    <br>
-    Hello {{firstName}} {{lastName}}
-  </body>
-</html>
+<div>
+  First name:<input (focus)="delay()" [(ng-model)]="firstName" type="text"/>
+  <br>
+  Last name:<input [(ng-model)]="lastName" type="text"/>
+  <br>
+  Hello {{ firstName }} {{ lastName }}
+  <br><br>
+  <p style='color:red;'>No $watch equivalent? - Use's Zone.js to detect changes</p>
+  <p style='color:red;'>Perhaps NgZone is something to look into?</p>
+  <p><a href='http://stackoverflow.com/questions/29709542/how-does-rxjs-observable-perform-compare-to-watch-in-angularjs-1-x/29715849#29715849'>Only information on Angular2's $watch I can find</a></p>
+</div>

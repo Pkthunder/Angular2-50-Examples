@@ -26,3 +26,5 @@ while [ $count -lt 51 ]; do
 	let count+=1
 done
 
+echo Transfer Completed!
+
