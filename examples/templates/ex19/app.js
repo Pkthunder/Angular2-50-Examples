@@ -13,53 +13,20 @@ if (typeof __metadata !== "function") __metadata = function (k, v) {
 var angular2_1 = require('angular2/angular2');
 var angular2_2 = require('angular2/angular2');
 var AppComponent = (function () {
-    function AppComponent(http) {
-        this.http = http;
+    function AppComponent() {
         this.countries = [
             { "name": "China", "population": 1359821000 },
             { "name": "India", "population": 1205625000 },
             { "name": "United States of America", "population": 312247000 }
         ];
-        this.people = 'hi';
-        console.log(this.people);
-        this.getData();
-        console.log(this.people);
     }
-    /*getData() {
-        this.http.get('../../static/countries.json'), {
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            }
-        }).
-        toRx().
-        map(res => res.json()).
-        subscribe(
-            data => this.onSuccess(data),
-
-            err => this.onError(err)
-        );
-    }*/
-    AppComponent.prototype.getData = function () {
-        var _this = this;
-        this.http.get('countries.json')
-            .toRx()
-            .map(function (res) { return res.json(); })
-            .subscribe(function (data) { return _this.onSuccess(data); }, function (err) { return _this.onError(err); });
-    };
-    AppComponent.prototype.onSuccess = function (data) {
-        console.log('data', data);
-    };
-    AppComponent.prototype.onError = function (err) {
-        console.log(err);
-    };
     AppComponent = __decorate([
-        angular2_1.Component({ selector: 'my-app', viewInjector: [angular2_2.httpInjectables] }),
+        angular2_1.Component({ selector: 'my-app' }),
         angular2_1.View({
             templateUrl: './templates/ex19/ex19.html',
-            directives: [angular2_1.NgFor]
+            directives: [angular2_2.NgFor]
         }), 
-        __metadata('design:paramtypes', [angular2_2.Http])
+        __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
 })();

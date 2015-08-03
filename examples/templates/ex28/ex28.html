@@ -1,29 +1,16 @@
-<html ng-app="countryApp">
-  <head>
-    <meta charset="utf-8">
-    <title>Angular.js Example</title>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
-    <script>
-      var countryApp = angular.module('countryApp', []);
-      countryApp.controller('CountryCtrl', function ($scope, $http){
-        $http.get('countries.json').success(function(data) {
-          $scope.countries = data;
-        });
-      });
-    </script>
-  </head>
-  <body ng-controller="CountryCtrl">
-    <table>
+<div>
+  <p style='color:red;'>I believe ng-src doesn't exist in Angular 2 because it does not need to via Shadow DOM</p>
+  Name: <input #query type="text">
+  <table>
       <tr>
         <th>Country</th>
         <th>Population</th>
         <th>Flag</th>
       </tr>
-      <tr ng-repeat="country in countries">
+      <tr *ng-for="#country of countries">
         <td>{{country.name}}</td>
         <td>{{country.population}}</td>
-        <td><img ng-src="{{country.flagURL}}" width="100"></td>
+        <td><img src="{{country.flagURL}}" width="100"></td>
       </tr>
     </table>
-  </body>
-</html>
+</div>
