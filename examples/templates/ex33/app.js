@@ -12,17 +12,15 @@ if (typeof __metadata !== "function") __metadata = function (k, v) {
 };
 var angular2_1 = require('angular2/angular2');
 var angular2_2 = require('angular2/angular2');
-var CurrencyPipe_1 = require('../../../src/pipes/CurrencyPipe');
 var AppComponent = (function () {
     function AppComponent(http) {
         this.http = http;
         this.countries = [];
-        console.log("constructor called!");
         this.getData();
     }
     AppComponent.prototype.getData = function () {
         var _this = this;
-        this.http.get('./templates/ex31/countries.json')
+        this.http.get('./templates/ex33/countries.json')
             .toRx()
             .map(function (res) { return res.json(); })
             .subscribe(function (data) { return _this.onSuccess(data); }, function (err) { return _this.onError(err); });
@@ -37,10 +35,10 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         angular2_1.Component({
             selector: 'my-app',
-            viewInjector: [angular2_2.httpInjectables, CurrencyPipe_1.currency]
+            viewInjector: [angular2_2.httpInjectables]
         }),
         angular2_1.View({
-            templateUrl: './templates/ex31/ex31.html',
+            templateUrl: './templates/ex33/ex33.html',
             directives: [angular2_1.NgFor]
         }), 
         __metadata('design:paramtypes', [angular2_2.Http])

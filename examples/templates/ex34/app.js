@@ -1,4 +1,5 @@
 /// <reference path="../../../typings/angular2/angular2.d.ts" />
+/// <reference path="../../../typings/angular2/router.d.ts" />
 if (typeof __decorate !== "function") __decorate = function (decorators, target, key, desc) {
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") return Reflect.decorate(decorators, target, key, desc);
     switch (arguments.length) {
@@ -11,39 +12,29 @@ if (typeof __metadata !== "function") __metadata = function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require('angular2/angular2');
-var angular2_2 = require('angular2/angular2');
-var CurrencyPipe_1 = require('../../../src/pipes/CurrencyPipe');
+var router_1 = require('angular2/router');
+// Router imports
+var quickstart1_1 = require('../../route_examples/quickstart1');
+var quickstart2_1 = require('../../route_examples/quickstart2');
+var quickstart3_1 = require('../../route_examples/quickstart3');
 var AppComponent = (function () {
-    function AppComponent(http) {
-        this.http = http;
-        this.countries = [];
-        console.log("constructor called!");
-        this.getData();
+    function AppComponent() {
+        this.main = 'This is from app.ts';
     }
-    AppComponent.prototype.getData = function () {
-        var _this = this;
-        this.http.get('./templates/ex31/countries.json')
-            .toRx()
-            .map(function (res) { return res.json(); })
-            .subscribe(function (data) { return _this.onSuccess(data); }, function (err) { return _this.onError(err); });
-    };
-    AppComponent.prototype.onSuccess = function (data) {
-        console.log('data', data);
-        this.countries = data;
-    };
-    AppComponent.prototype.onError = function (err) {
-        console.log(err);
-    };
     AppComponent = __decorate([
         angular2_1.Component({
             selector: 'my-app',
-            viewInjector: [angular2_2.httpInjectables, CurrencyPipe_1.currency]
         }),
         angular2_1.View({
-            templateUrl: './templates/ex31/ex31.html',
-            directives: [angular2_1.NgFor]
-        }), 
-        __metadata('design:paramtypes', [angular2_2.Http])
+            templateUrl: './templates/ex34/ex34.html',
+            directives: [router_1.RouterOutlet]
+        }),
+        router_1.RouteConfig([
+            { path: '/', as: 'quickstart1', component: quickstart1_1.QuickStart1 },
+            { path: '/2', as: 'quickstart2', component: quickstart2_1.QuickStart2 },
+            { path: '/3', as: 'quickstart3', component: quickstart3_1.QuickStart3 },
+        ]), 
+        __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
 })();
