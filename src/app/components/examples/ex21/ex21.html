@@ -1,0 +1,13 @@
+<div>
+  <p style='color:red;'>No difference between 20 and 21 due to removal of scope variable</p>
+  <table>
+      <tr>
+        <th>Country</th>
+        <th>Population</th>
+      </tr>
+      <tr *ng-for="#country of countries">
+        <td>{{country.name}}</td>
+        <td>{{country.population}}</td>
+      </tr>
+    </table>
+</div>

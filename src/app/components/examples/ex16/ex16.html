@@ -1,0 +1,18 @@
+<div>
+  <ul>
+    <li *ng-for="#name of names">
+      {{ name }}
+    </li>
+  </ul>
+  <form #f="form" (submit)="addTo(add.value)">
+    Name: <input #add [(ng-model)]="newname">
+    <input type="submit" value="Add Name">
+  </form>
+
+  <p style='color:red;'>I don't understand why form won't clear</p>
+  <p style='color:red;'>Always clears on button press</p>
+  <p style='color:red;'>And on 2nd "enter" submit</p>
+  <p style='color:red;'>Two way data-binding bug?</p>
+  <p style='color:red;'>Only clear with timeout call?</p>
+</div>
+
