@@ -1,13 +1,14 @@
-/// <reference path="../../typings/angular2/angular2.d.ts" />
-
 import {Component, View, bootstrap, NgFor, formDirectives} from 'angular2/angular2';
 
-@Component({selector: 'my-app'})
+// Use webpack's `require` to get files as a raw string using raw-loader
+let template = require('./ex15.html');
+
+@Component({selector: 'example15'})
 @View({ 
-  templateUrl: './templates/ex15/ex15.html',
+  template: template,
   directives: [NgFor, formDirectives]
 })
-class AppComponent {
+export class App15 {
 	names: Array<string>;
 
 	constructor() {
@@ -17,7 +18,4 @@ class AppComponent {
 	addTo(name: string) {
 		this.names.push(name);
 	}
-
 }
-
-bootstrap(AppComponent);

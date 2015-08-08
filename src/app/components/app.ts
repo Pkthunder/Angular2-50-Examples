@@ -28,6 +28,23 @@ import {Home} from './home/home';
 
 import {App7} from './examples/ex07/app';
 import {App8} from './examples/ex08/app';
+import {App9} from './examples/ex09/app';
+import {App10} from './examples/ex10/app';
+import {App11} from './examples/ex11/app';
+import {App12} from './examples/ex12/app';
+import {App13} from './examples/ex13/app';
+import {App14} from './examples/ex14/app';
+import {App15} from './examples/ex15/app';
+import {App16} from './examples/ex16/app';
+import {App17} from './examples/ex17/app';
+import {App18} from './examples/ex18/app';
+import {App19} from './examples/ex19/app';
+import {App20} from './examples/ex20/app';
+import {App21} from './examples/ex21/app';
+import {App22} from './examples/ex22/app';
+import {App23} from './examples/ex23/app';
+import {App24} from './examples/ex24/app';
+import {App25} from './examples/ex25/app';
 
 // Use webpack's `require` to get files as a raw string using raw-loader
 let styles   = require('./app.css');
@@ -102,6 +119,27 @@ let styles   = require('./app.css');
           <li class="l-left">
             <a [router-link]=" ['/18'] "class="top-nav-button ac-default-theme">18</a>
           </li>
+          <li class="l-left">
+            <a [router-link]=" ['/19'] "class="top-nav-button ac-default-theme">19</a>
+          </li>
+          <li class="l-left">
+            <a [router-link]=" ['/20'] "class="top-nav-button ac-default-theme">20</a>
+          </li>
+          <li class="l-left">
+            <a [router-link]=" ['/21'] "class="top-nav-button ac-default-theme">21</a>
+          </li>
+          <li class="l-left">
+            <a [router-link]=" ['/22'] "class="top-nav-button ac-default-theme">22</a>
+          </li>
+          <li class="l-left">
+            <a [router-link]=" ['/23'] "class="top-nav-button ac-default-theme">23</a>
+          </li>
+          <li class="l-left">
+            <a [router-link]=" ['/24'] "class="top-nav-button ac-default-theme">24</a>
+          </li>
+          <li class="l-left">
+            <a [router-link]=" ['/25'] "class="top-nav-button ac-default-theme">25</a>
+          </li>
         </ul>
       </div>
     </header>
@@ -119,16 +157,23 @@ let styles   = require('./app.css');
   { path: '/',      as: 'home',    component: Home },
   { path: '/7',     as: '7',       component: App7 },
   { path: '/8',     as: '8',       component: App8 },
-  { path: '/9',     as: '9',       component: App8 },
-  { path: '/10',    as: '10',      component: App8 },
-  { path: '/11',    as: '11',      component: App8 },
-  { path: '/12',    as: '12',      component: App8 },
-  { path: '/13',    as: '13',      component: App8 },
-  { path: '/14',    as: '14',      component: App8 },
-  { path: '/15',    as: '15',      component: App8 },
-  { path: '/16',    as: '16',      component: App8 },
-  { path: '/17',    as: '17',      component: App8 },
-  { path: '/18',    as: '18',      component: App8 }
+  { path: '/9',     as: '9',       component: App9 },
+  { path: '/10',    as: '10',      component: App10 },
+  { path: '/11',    as: '11',      component: App11 },
+  { path: '/12',    as: '12',      component: App12 },
+  { path: '/13',    as: '13',      component: App13 },
+  { path: '/14',    as: '14',      component: App14 },
+  { path: '/15',    as: '15',      component: App15 },
+  { path: '/16',    as: '16',      component: App16 },
+  { path: '/17',    as: '17',      component: App17 },
+  { path: '/18',    as: '18',      component: App18 },
+  { path: '/19',    as: '19',      component: App19 },
+  { path: '/20',    as: '20',      component: App20 },
+  { path: '/21',    as: '21',      component: App21 },
+  { path: '/22',    as: '22',      component: App22 },
+  { path: '/23',    as: '23',      component: App23 },
+  { path: '/24',    as: '24',      component: App24 },
+  { path: '/25',    as: '25',      component: App25 }
 ])
 export class App {
   name: string;

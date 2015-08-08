@@ -1,23 +1,23 @@
-/// <reference path="../../../typings/angular2/angular2.d.ts" />
-
 import {Component, View, bootstrap, NgFor} from 'angular2/angular2';
 
 import {Http, httpInjectables} from 'angular2/angular2';
 
-@Component({selector: 'my-app', viewInjector: [httpInjectables]})
+let template = require('./ex24.html');
+
+@Component({selector: 'example24', viewInjector: [httpInjectables]})
 @View({ 
-  templateUrl: './templates/ex24/ex24.html',
+  template: template,
   directives: [NgFor]
 })
 
-export class AppComponent {
+export class App24 {
 	countries: Array<Object> = [];
 
 	constructor(public http: Http) {
 		this.getData();
 	}
 	getData() {
-		this.http.get('../static/countries.json')
+		this.http.get('./countries.json')
 			.toRx()
 			.map(res => res.json())
 			.subscribe(data => this.onSuccess(data),
@@ -34,5 +34,3 @@ export class AppComponent {
 		console.log(err);
 	}
 }
-
-bootstrap(AppComponent);

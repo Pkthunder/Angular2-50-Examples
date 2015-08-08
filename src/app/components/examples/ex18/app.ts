@@ -1,15 +1,16 @@
-/// <reference path="../../typings/angular2/angular2.d.ts" />
-
 import {Component, View, bootstrap} from 'angular2/angular2';
 
 import {NgFor} from 'angular2/angular2';
 
-@Component({selector: 'my-app'})
+// Use webpack's `require` to get files as a raw string using raw-loader
+let template = require('./ex18.html');
+
+@Component({selector: 'example18'})
 @View({ 
-  templateUrl: './templates/ex18/ex18.html',
+  template: template,
   directives: [NgFor]
 })
-export class AppComponent {
+export class App18 {
 	countries: Array<Object>;
 
 	constructor() {
@@ -19,7 +20,4 @@ export class AppComponent {
 	      	{"name": "United States of America","population": 312247000}
 		]
 	}
-
 }
-
-bootstrap(AppComponent);

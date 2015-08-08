@@ -1,31 +1,24 @@
-/// <reference path="../../typings/angular2/angular2.d.ts" />
-
 import {Component, View, bootstrap, NgFor, formDirectives, Control} from 'angular2/angular2';
 
-@Component({selector: 'my-app'})
+// Use webpack's `require` to get files as a raw string using raw-loader
+let template = require('./ex16.html');
+
+@Component({selector: 'example16'})
 @View({ 
-  templateUrl: './templates/ex16/ex16.html',
+  template: template,
   directives: [NgFor, formDirectives]
 })
-export class AppComponent {
+export class App16 {
 	names: Array<string>;
 	newname: string;
 
 	constructor() {
 		this.names = ['Larry', 'Curly', 'Moe'];
-		this.newname = ''
+		this.newname = '';
 	}
 
 	addTo(name?: string) {
 		this.names.push(this.newname);
 		this.newname = '';
-		var that = this;
-		//only clears with timeout call?
-		setTimeout( function() {
-			that.newname = '';
-		}, 1);
 	}
-
 }
-
-bootstrap(AppComponent);
