@@ -11,6 +11,7 @@ var bodyParser = require('body-parser');
 
 // Express App
 var app = express();
+var router = express.Router();
 
 // Env
 var PORT     = process.env.PORT || 8080;

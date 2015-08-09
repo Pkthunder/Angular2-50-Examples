@@ -14,6 +14,9 @@ import {routerDirectives} from 'angular2/router';
 // Import all of our custom app directives
 import {appDirectives} from '../directives/directives';
 
+// Custom directive for source code viewing
+import {Code} from './code';
+
 /*
  * App Pipes
  * our collection of pipes registry
@@ -45,6 +48,9 @@ import {App22} from './examples/ex22/app';
 import {App23} from './examples/ex23/app';
 import {App24} from './examples/ex24/app';
 import {App25} from './examples/ex25/app';
+import {App26} from './examples/ex26/app';
+import {App27} from './examples/ex27/app';
+import {App28} from './examples/ex28/app';
 
 // Use webpack's `require` to get files as a raw string using raw-loader
 let styles   = require('./app.css');
@@ -71,7 +77,10 @@ let styles   = require('./app.css');
     routerDirectives,
 
     // Our collection of directives from /directives
-    appDirectives
+    appDirectives,
+
+    // Custom source code directive
+    Code
   ],
   // include our .css file
   styles: [ styles ],
@@ -140,12 +149,43 @@ let styles   = require('./app.css');
           <li class="l-left">
             <a [router-link]=" ['/25'] "class="top-nav-button ac-default-theme">25</a>
           </li>
+          <li class="l-left">
+            <a [router-link]=" ['/26'] "class="top-nav-button ac-default-theme">26</a>
+          </li>
+          <li class="l-left">
+            <a [router-link]=" ['/27'] "class="top-nav-button ac-default-theme">27</a>
+          </li>
+          <li class="l-left">
+            <a [router-link]=" ['/28'] "class="top-nav-button ac-default-theme">28</a>
+          </li>
+          <li class="l-left">
+            <a [router-link]=" ['/29'] "class="top-nav-button ac-default-theme">29</a>
+          </li>
+          <li class="l-left">
+            <a [router-link]=" ['/30'] "class="top-nav-button ac-default-theme">30</a>
+          </li>
+          <li class="l-left">
+            <a [router-link]=" ['/31'] "class="top-nav-button ac-default-theme">31</a>
+          </li>
         </ul>
       </div>
     </header>
 
     <main>
-      <router-outlet></router-outlet>
+      <div>
+        <div class="text-wrapper">
+          <h3>Explanation</h3>
+          Temp
+        </div>
+        <div class="outlet-wrapper">
+          <h3>Example</h3>
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+      <div class="list-wrapper">
+        <p>{{ file }}</p>
+        <textarea code>Hello! {{ appCode }}</textarea>
+      </div>
     </main>
 
     <footer>
@@ -173,11 +213,42 @@ let styles   = require('./app.css');
   { path: '/22',    as: '22',      component: App22 },
   { path: '/23',    as: '23',      component: App23 },
   { path: '/24',    as: '24',      component: App24 },
-  { path: '/25',    as: '25',      component: App25 }
+  { path: '/25',    as: '25',      component: App25 },
+  { path: '/26',    as: '26',      component: App26 },
+  { path: '/27',    as: '27',      component: App27 },
+  { path: '/28',    as: '28',      component: App28 },
+  { path: '/29',    as: '29',      component: Home },
+  { path: '/30',    as: '30',      component: Home },
+  { path: '/31',    as: '31',      component: Home }
 ])
 export class App {
   name: string;
+  filePath: string;
+  file: string;
+  appCode: string;
+
   constructor() {
     this.name = 'angular'; // used in logo
+
+    this.filePath = 'src/app/components/examples/';
+    this.file = '';
+    this.appCode = '';
+    //this.getFileName();
   }
+/*
+  getFileName() {
+    var url = window.location.href;
+    url = url.split('://')[1];
+    console.log('url', url);
+    var exNum = url.split('/')[1];
+    console.log('exNum', exNum);
+
+    var fullPath = this.filePath + 'ex' + exNum + 'app.ts';
+    console.log('fullPath', fullPath);
+    if (exNum <= '28' && exNum >= '7') {
+      let exampleFile = require(fullPath);
+      this.appCode = exampleFile;
+    }
+  }
+*/
 }

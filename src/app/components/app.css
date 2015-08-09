@@ -87,13 +87,68 @@ header {
   margin-bottom: 10px;
 }
 
+
 main {
-  margin: 0 auto;
-  text-align: center;
+  width: 100%;
+  padding: 0 15px;
 }
 
-footer {
+main h3 {
+  border-bottom: 1px black solid;
+}
+
+main div.text-wrapper {
   position: absolute;
+  left: 15px;
+  top: 75px;
+  border: 1px black solid;
+  border-radius: 5px;
+  display: inline-block;
+  width: 450px;
+  min-height: 250px;
+  max-height: 250px;
+  padding: 5px;
+}
+
+main div.outlet-wrapper {
+  position: absolute;
+  left: 500px;
+  top: 75px;
+  border: 1px black solid;
+  border-radius: 5px;
+  display: inline-block;
+  width: 49%;
+  min-height: 250px;
+  max-height: 250px;
+  padding: 5px;
+  overflow-y: scroll;
+}
+
+main div.list-wrapper {
+  list-style: none;
+  position: absolute;
+  left: 15px;
+  top: 330px;
+  width: 100%;
+}
+
+main div.list-wrapper textarea {
+  resize: none;
+  min-height: 250px;
+  max-height: 250px;
+  overflow-y: scroll;
+  width: 78%;
+  border: 1px black solid;
+  border-radius: 5px;
+}
+
+
+footer {
+  width: 100%;
+  background-color: white;
+  margin-top: 4px;
+  border-top: 1px black solid;
+  position: fixed;
   bottom: 0;
   text-align: center;
 }

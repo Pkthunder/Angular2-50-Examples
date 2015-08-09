@@ -1,14 +1,10 @@
-/// <reference path="../../../typings/angular2/angular2.d.ts" />
-
 import {Component, View, bootstrap, NgFor} from 'angular2/angular2';
 
 import {Http, httpInjectables} from 'angular2/angular2';
 
-import {currency} from '../../../src/pipes/CurrencyPipe';
-
 @Component({
 	selector: 'my-app', 
-	viewInjector: [httpInjectables, currency]
+	viewInjector: [httpInjectables]
 }) 
 @View({ 
   templateUrl: './templates/ex31/ex31.html',
@@ -40,5 +36,3 @@ export class AppComponent {
 		console.log(err);
 	}
 }
-
-bootstrap(AppComponent);
