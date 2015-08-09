@@ -1,0 +1,12 @@
+<div>
+  <ul>
+    <li *ng-for="#name of names">
+      {{ name }}
+    </li>
+  </ul>
+  <form #f="form" (submit)="addTo(add.value)">
+    Name: <input #add [(ng-model)]="newname">
+    <input type="submit" value="Add Name">
+  </form>
+</div>
+

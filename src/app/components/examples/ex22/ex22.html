@@ -1,0 +1,14 @@
+<div>
+  <p style='color:red;'>Filter and OrderBy are not contained in Angular2, may require custom Pipe to be written</p>
+  Name: <input #query type="text">
+  <table>
+      <tr>
+        <th>Country</th>
+        <th>Population</th>
+      </tr>
+      <tr *ng-for="#country of countries">
+        <td>{{country.name}}</td>
+        <td>{{country.population}}</td> 
+      </tr>
+    </table>
+</div>
