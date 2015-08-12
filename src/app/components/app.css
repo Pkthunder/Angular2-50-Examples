@@ -134,8 +134,8 @@ main div.list-wrapper {
 
 main div.list-wrapper > div {
   display: inline-block;
-  min-height: 330px;
-  max-height: 330px;
+  min-height: 355px;
+  max-height: 355px;
   width: 48%;
   border: 1px black solid;
   border-radius: 5px;

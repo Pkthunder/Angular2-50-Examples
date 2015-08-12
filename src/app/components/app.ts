@@ -95,13 +95,13 @@ let styles   = require('./app.css');
             <a [router-link]=" ['/home'] "class="top-nav-button ac-default-theme">Home</a>
           </li>
           <li class="l-left">
-            <a [router-link]=" ['/7'] "class="top-nav-button ac-default-theme">7</a>
+            <a [router-link]=" ['/07'] "class="top-nav-button ac-default-theme">7</a>
           </li>
           <li class="l-left">
-            <a [router-link]=" ['/8'] "class="top-nav-button ac-default-theme">8</a>
+            <a [router-link]=" ['/08'] "class="top-nav-button ac-default-theme">8</a>
           </li>
           <li class="l-left">
-            <a [router-link]=" ['/9'] "class="top-nav-button ac-default-theme">9</a>
+            <a [router-link]=" ['/09'] "class="top-nav-button ac-default-theme">9</a>
           </li>
           <li class="l-left">
             <a [router-link]=" ['/10'] "class="top-nav-button ac-default-theme">10</a>
@@ -203,9 +203,9 @@ let styles   = require('./app.css');
 })
 @RouteConfig([
   { path: '/',      as: 'home',    component: Home },
-  { path: '/7',     as: '7',       component: App7 },
-  { path: '/8',     as: '8',       component: App8 },
-  { path: '/9',     as: '9',       component: App9 },
+  { path: '/07',    as: '07',      component: App7 },
+  { path: '/08',    as: '08',      component: App8 },
+  { path: '/09',    as: '09',      component: App9 },
   { path: '/10',    as: '10',      component: App10 },
   { path: '/11',    as: '11',      component: App11 },
   { path: '/12',    as: '12',      component: App12 },

@@ -15,6 +15,7 @@ export class App12 {
 	constructor() {
 		this.firstName = 'John';
 		this.lastName = 'Smith';
+		this.delay();
 	}
 
 	delay() {

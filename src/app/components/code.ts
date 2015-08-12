@@ -22,11 +22,8 @@ export class Code {
 
 
 		this.$ele = this.el.nativeElement;
-		var that = this;
-		setTimeout( function() {
-			console.log(that.$ele);
-			console.log("code" in that.$ele.attributes);
-		}, 2000);
+		console.log(this.$ele);
+		console.log("code" in this.$ele.attributes);
 		this.filePath = '/app/components/examples/';
 
 		// defaults
