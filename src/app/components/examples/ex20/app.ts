@@ -20,7 +20,7 @@ export class App20 {
 
 	//based off of https://github.com/angular-class/angular2-webpack-starter/blob/master/src/app-simple/app.ts
 	getData() {
-		this.http.get('./countries.json')
+		this.http.get('/public/countries.json')
 			.toRx()
 			.map(res => res.json())
 			.subscribe(data => this.onSuccess(data),

@@ -33,7 +33,7 @@ app.use(bodyParser.text(), function ngHttpFix(req, res, next) {
 
 // Your middleware
 app.use(history());
-app.use(express.static('src/public'));
+app.use(express.static('src'));
 
 // your api middleware
 var api = require('./todo_api')();

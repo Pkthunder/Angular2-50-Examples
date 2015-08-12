@@ -4,7 +4,7 @@
  * Angular 2
  */
 import {Component, View} from 'angular2/angular2';
-import {RouteConfig} from 'angular2/router';
+import {Router, RouteConfig} from 'angular2/router';
 
 /*
  * Directives
@@ -51,6 +51,8 @@ import {App25} from './examples/ex25/app';
 import {App26} from './examples/ex26/app';
 import {App27} from './examples/ex27/app';
 import {App28} from './examples/ex28/app';
+import {App29} from './examples/ex29/app';
+import {App30} from './examples/ex30/app';
 
 // Use webpack's `require` to get files as a raw string using raw-loader
 let styles   = require('./app.css');
@@ -87,7 +89,7 @@ let styles   = require('./app.css');
   template: `
     <header>
       <div layout="row" class="top-nav ac-default-theme">
-        <img src="angular-shield.png" alt="Angular2" height="54" width="54">
+        <img src="public/angular-shield.png" alt="Angular2" height="54" width="54">
         <ul>
           <li class="l-left">
             <a [router-link]=" ['/home'] "class="top-nav-button ac-default-theme">Home</a>
@@ -183,8 +185,14 @@ let styles   = require('./app.css');
         </div>
       </div>
       <div class="list-wrapper">
-        <p>{{ file }}</p>
-        <textarea code>Hello! {{ appCode }}</textarea>
+        <div>
+          <p>{{ TSfile }}</p>
+          <textarea code="ts">{{ appCode }}</textarea>
+        </div>
+        <div>
+          <p>{{ HTMLfile }}</p>
+          <textarea code="html">{{ appCode }}</textarea>
+        </div>
       </div>
     </main>
 
@@ -217,38 +225,44 @@ let styles   = require('./app.css');
   { path: '/26',    as: '26',      component: App26 },
   { path: '/27',    as: '27',      component: App27 },
   { path: '/28',    as: '28',      component: App28 },
-  { path: '/29',    as: '29',      component: Home },
-  { path: '/30',    as: '30',      component: Home },
+  { path: '/29',    as: '29',      component: App29 },
+  { path: '/30',    as: '30',      component: App30 },
   { path: '/31',    as: '31',      component: Home }
 ])
 export class App {
   name: string;
-  filePath: string;
-  file: string;
-  appCode: string;
+  TSfile: string;
+  HTMLfile: string;
+  lastUrl: string;
 
-  constructor() {
-    this.name = 'angular'; // used in logo
-
-    this.filePath = 'src/app/components/examples/';
-    this.file = '';
-    this.appCode = '';
-    //this.getFileName();
-  }
-/*
-  getFileName() {
+  constructor(public router: Router) {
+    // grabs current example number
     var url = window.location.href;
     url = url.split('://')[1];
-    console.log('url', url);
     var exNum = url.split('/')[1];
-    console.log('exNum', exNum);
 
-    var fullPath = this.filePath + 'ex' + exNum + 'app.ts';
-    console.log('fullPath', fullPath);
-    if (exNum <= '28' && exNum >= '7') {
-      let exampleFile = require(fullPath);
-      this.appCode = exampleFile;
+    // sets template variables
+    this.name = 'angular'; // used in logo
+    this.TSfile = 'app.ts';
+    this.HTMLfile = 'ex' + exNum + '.html';
+
+    // reloads page on router navigation to update file displays
+    this.lastUrl = window.location.href;
+    this.router.subscribe( () => this.isNext() );
+
+    console.log("hello!", this.router);
+    this.print();
+
+  }
+
+  isNext() {
+    if ( window.location.href !== this.lastUrl ) {
+      location.reload();
     }
   }
-*/
+
+  print() {
+    console.log("hello!", this.router);
+  }
+
 }

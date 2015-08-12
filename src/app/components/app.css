@@ -128,18 +128,26 @@ main div.list-wrapper {
   list-style: none;
   position: absolute;
   left: 15px;
-  top: 330px;
-  width: 100%;
+  top: 345px;
+  width: 80%;
+}
+
+main div.list-wrapper > div {
+  display: inline-block;
+  min-height: 330px;
+  max-height: 330px;
+  width: 48%;
+  border: 1px black solid;
+  border-radius: 5px;
+  padding-left: 4px;
 }
 
 main div.list-wrapper textarea {
   resize: none;
-  min-height: 250px;
-  max-height: 250px;
+  min-height: 315px;
+  max-height: 315px;
   overflow-y: scroll;
-  width: 78%;
-  border: 1px black solid;
-  border-radius: 5px;
+  width: 100%;
 }
 
 
@@ -151,5 +159,6 @@ footer {
   position: fixed;
   bottom: 0;
   text-align: center;
+  z-index: 9999;
 }
 
