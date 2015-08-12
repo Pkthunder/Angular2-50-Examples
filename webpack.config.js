@@ -33,7 +33,7 @@ var config = {
     inline: true,
     colors: true,
     historyApiFallback: true,
-    contentBase: 'src/public',
+    contentBase: 'src',
     publicPath: '/__build__'
   },
 

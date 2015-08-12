@@ -18,7 +18,7 @@ export class App23 {
 		this.getData();
 	}
 	getData() {
-		this.http.get('./countries.json')
+		this.http.get('/public/countries.json')
 			.toRx()
 			.map(res => res.json())
 			.subscribe(data => this.onSuccess(data),

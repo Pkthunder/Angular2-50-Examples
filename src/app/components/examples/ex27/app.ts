@@ -17,7 +17,7 @@ export class App27 {
 		this.getData();
 	}
 	getData() {
-		this.http.get('./countries_27.json')
+		this.http.get('/app/components/examples/ex27/countries.json')
 			.toRx()
 			.map(res => res.json())
 			.subscribe(data => this.onSuccess(data),
