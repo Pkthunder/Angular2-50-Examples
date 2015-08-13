@@ -1,0 +1,7 @@
+(7) Simple MVC text input
+    
+@app.ts, line 1: formDirectives is a variable to represent all angular2 form directives, instead of loading them all individually. In this case, however, I could have loaded ONLY NgModel, because it is the only form directive I use.
+
+@app.ts, line 15: The constructor initializes name to an empty string. Notice the lack of a $scope variable, the class App7 defines variables, which only extend to the HTML defined in @View
+
+NOTE: Import paths are relative to the .ts file itself, while all content paths (for example, the templateUrl path) are relative to the host HTML file.

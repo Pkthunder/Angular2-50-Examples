@@ -1,0 +1,5 @@
+(13) $scope, $apply, $watch II
+
+This example is suppose TO work because $apply call was added back in. However my example instead illustrates the ability to call class methods from the constructor.
+
+@app.ts, line 17: Calling class method within constructor

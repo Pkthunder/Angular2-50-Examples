@@ -1,8 +1,8 @@
 <div>
   <ul>
-    <li *ng-for="#name of names">
-      {{ name }}
-      <a (click)="removeName(name, $event)" href="">X</a>
+    <li *ng-for="#name of names; #i = index">
+      {{ i }} : {{ name }}
+      <a (click)="removeName(i, $event)" href="">X</a>
     </li>
   </ul>
   <form #f="form" (submit)="addTo(add.value)">

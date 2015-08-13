@@ -1,0 +1,7 @@
+(17) More template only magic
+
+@ex17.html, lines 3-5: I am showing the NgFor index feature again. The indexing stays consistent through all additions and deletions.
+
+@app.ts, line 5: I bound a click event to an <a> tag. Notice both the click handler takes 2 inputs, one of which is being passed $event, and the href=””. As you would expect, clicking on the <a> tag would navigate you to href=”” (for example, localhost:8080/). However, passing $event to the removeName function gives access to the click event. And as you can see, in app.ts line 28, I can call e.preventDefault() to stop the <a> tag behavior and turn each X into a button instead.
+
+Note: removeName’s index parameter expects a number, however, it would receive a string if the expected type was a string, from all template calls to the function. Simply put, templates calling functions auto-parse to correct type (when possible).

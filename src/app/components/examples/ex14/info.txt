@@ -1,0 +1,5 @@
+(14) ng-repeat replacement: NgFor
+
+@app.ts, line 1: I am no longer importing formDirectives, because I am not using any anymore. I am now importing NgFor individually (instead of importing the coreDirectives constant, like I was before with formDirectives)
+
+@ex14.html, line 14: New template syntax for ng-repeat (now *ng-for). Note “#name” syntax, it creates a local variable within the template. This is true outside of ng-for as well. “#variable” can be used to data bind purely within the template (no class code required)

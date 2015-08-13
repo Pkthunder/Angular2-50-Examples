@@ -1,0 +1,5 @@
+(16) Template variables vs class members
+
+@ex16.html, lines 8: I am using NgModel again, binding <input> element to the class member newname. This actually eliminates the needs for #add, but I kept in their anyway.
+
+@app.ts, lines 19-21: The method declaration of addTo is slightly altered. It no longer requires a string parameter (notice the question mark, name?: string), the name parameter is now optional. Also notice that the function actually never uses the name parameter, it relies purely on the NgModel binding to this.newname

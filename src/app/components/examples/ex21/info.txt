@@ -1,0 +1,3 @@
+(21) New Http module II
+
+Due to the elimination of the $scope variable, these two examples are the same

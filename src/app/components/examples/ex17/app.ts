@@ -1,13 +1,12 @@
-import {Component, View, bootstrap, NgFor, formDirectives} from 'angular2/angular2';
-
-// Use webpack's `require` to get files as a raw string using raw-loader
-let template = require('./ex17.html');
+import {Component, View, NgFor, formDirectives} from 'angular2/angular2';
 
 @Component({selector: 'example17'})
+
 @View({ 
-  template: template,
+  templateUrl: '/app/components/examples/ex17/ex17.html',
   directives: [NgFor, formDirectives]
 })
+
 export class App17 {
 	names: Array<string>;
 	newname: string;
@@ -22,10 +21,8 @@ export class App17 {
 		this.newname = '';
 	}
 
-	removeName(name, e) {
+	removeName(index: number, e: any) {
 		e.preventDefault();
-		var i = this.names.indexOf(name);
-		this.names.splice(i,1);
+		this.names.splice(index,1);
 	}
-
 }

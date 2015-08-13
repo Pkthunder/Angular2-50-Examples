@@ -1,13 +1,12 @@
-import {Component, View, bootstrap, formDirectives} from 'angular2/angular2';
-
-// Use webpack's `require` to get files as a raw string using raw-loader
-let template = require('./ex12.html');
+import {Component, View, formDirectives} from 'angular2/angular2';
 
 @Component({selector: 'example12'})
+
 @View({ 
-  template: template,
+  templateUrl: '/app/components/examples/ex12/ex12.html',
   directives: [formDirectives]
 })
+
 export class App12 {
 	firstName: string;
 	lastName: string;
@@ -15,9 +14,11 @@ export class App12 {
 	constructor() {
 		this.firstName = 'John';
 		this.lastName = 'Smith';
-		this.delay();
+		//this.delay(); names won't change without function call
 	}
 
+	// App12 method (member function) which will change the
+	// first and last name variables on a delay
 	delay() {
 		var that = this; //saving this pointer for timeout
 		setTimeout( function() {

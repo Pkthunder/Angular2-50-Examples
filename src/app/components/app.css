@@ -108,6 +108,7 @@ main div.text-wrapper {
   min-height: 250px;
   max-height: 250px;
   padding: 5px;
+  overflow-y: scroll;
 }
 
 main div.outlet-wrapper {

@@ -1,0 +1,5 @@
+(10) Initialized data bindings
+
+@app.ts, line 11: The class App10 is the controller replacement (The name App10 is not required, it’s just a variable name). All controller logic for the @Component and @View is written with a class, in this case App10. ‘export class’ just allows the class to imported by other .ts files (just like in line 1).
+
+@app.ts, lines 15-17: Notice the constructor of class App10 is used to initialize the two variables, firstName and lastName.

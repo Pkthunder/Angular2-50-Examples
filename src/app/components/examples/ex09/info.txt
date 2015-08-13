@@ -1,0 +1,3 @@
+(9) Double data binding
+
+Nothing particularly special about this example...

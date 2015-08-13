@@ -5,6 +5,7 @@
  */
 import {Component, View} from 'angular2/angular2';
 import {Router, RouteConfig} from 'angular2/router';
+import {Directive, ElementRef, Http} from 'angular2/angular2';
 
 /*
  * Directives
@@ -53,9 +54,37 @@ import {App27} from './examples/ex27/app';
 import {App28} from './examples/ex28/app';
 import {App29} from './examples/ex29/app';
 import {App30} from './examples/ex30/app';
+import {App31} from './examples/ex31/app';
 
 // Use webpack's `require` to get files as a raw string using raw-loader
 let styles   = require('./app.css');
+
+// Custom Directive to load explanation text files
+@Directive({
+  selector: '[explanation]'
+})
+class TextLoader {
+  constructor(public el:ElementRef, public http: Http) {
+    // grabs current example number
+    var url = window.location.href;
+    url = url.split('://')[1];
+    var exNum = url.split('/')[1];
+
+    //based off of https://github.com/angular-class/angular2-webpack-starter/blob/master/src/app-simple/app.ts
+    this.http.get('/app/components/examples/ex'+exNum+'/info.txt')
+      .toRx()
+      .map(res => res.text())
+      .subscribe(data => this.onSuccess(data),
+            err => this.onError(err)
+      );
+  }
+  onSuccess(data) {
+    this.el.nativeElement.innerHTML = data;
+  }
+  onError(err) {
+    console.log(err);
+  }
+}
 
 /*
  * App Component
@@ -82,7 +111,10 @@ let styles   = require('./app.css');
     appDirectives,
 
     // Custom source code directive
-    Code
+    Code,
+
+    // Custom explanation loader directive
+    TextLoader
   ],
   // include our .css file
   styles: [ styles ],
@@ -177,7 +209,7 @@ let styles   = require('./app.css');
       <div>
         <div class="text-wrapper">
           <h3>Explanation</h3>
-          Temp
+          <textarea code="text"></textarea>
         </div>
         <div class="outlet-wrapper">
           <h3>Example</h3>
@@ -227,13 +259,15 @@ let styles   = require('./app.css');
   { path: '/28',    as: '28',      component: App28 },
   { path: '/29',    as: '29',      component: App29 },
   { path: '/30',    as: '30',      component: App30 },
-  { path: '/31',    as: '31',      component: Home }
+  { path: '/31',    as: '31',      component: App31 }
 ])
+
 export class App {
   name: string;
   TSfile: string;
   HTMLfile: string;
   lastUrl: string;
+  infoText: string;
 
   constructor(public router: Router) {
     // grabs current example number

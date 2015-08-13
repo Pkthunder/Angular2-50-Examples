@@ -35,6 +35,11 @@ export class Code {
 			fType = "htmlmixed";
 			fName = "ex" + this.exNum + ".html";
 		}
+		// handle data pass to directive via template (code="text")
+		else if (this.$ele.attributes["code"].nodeValue === "text") {
+			fType = "text/plain";
+			fName = "info.txt";
+		}
 
 		this.getFile(fType, fName);
 	}
@@ -54,10 +59,11 @@ export class Code {
 		//console.log('data', data);
 		//this.$ele.innerHTML = data;
 		var cm = CodeMirror.fromTextArea(this.$ele, {
-			lineNumbers: true,
+			lineNumbers: ((fileType === "text/plain") ? false : true),
 			mode: fileType,
 			viewportMargin: Infinity,
-			readOnly: true
+			readOnly: true,
+			lineWrapping: ((fileType !== "text/plain") ? false : true)
 		});
 		cm.setValue(data);
 	}

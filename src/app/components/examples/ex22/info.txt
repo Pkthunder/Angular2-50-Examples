@@ -1,0 +1,3 @@
+(22) Pipe filters
+
+Not all Pipe filters have not yet been implemented in Angular2

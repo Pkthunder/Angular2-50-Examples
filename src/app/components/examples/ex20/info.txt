@@ -1,0 +1,7 @@
+(20) New Http module
+
+The new Http module is built with Promises and RxJS. Currently the Http module is not built 100% to spec, so expect some changes moving forward.
+
+@app.ts, line 18: To pass modules (or components) to the controller (or class) code, add parameters to the constructor and pass said modules. They will now accessible by this.var_name (var_name being the variable name)
+
+@app.ts, lines 23-28: .toRx() returns a RxJS Observable object. This object can be mapped to various data types, but currently only text() and json() are implemented.

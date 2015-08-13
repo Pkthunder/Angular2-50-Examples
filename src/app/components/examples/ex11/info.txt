@@ -1,0 +1,3 @@
+(11) Initialized data bindings II
+
+Example 10 and 11 are suppose to illustrate the difference between creating a global function and passing the $scope variable, and creating a controller function from angular.module instance. Since the $scope variable has been removed and all component scopes only encompass the component’s respective class and HTML template, Example 10 is now not possible. There my Examples 10 and 11 are exactly the same.

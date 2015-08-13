@@ -1,0 +1,9 @@
+(15) NgFor++ and submit event
+
+@app.ts, line 1: I am now including formDirectives again, because I used a form directive to submit the new name and add it to the list
+
+@ex15.html, lines 3-4: NgFor also allows for me to track the index for each element. This is responsive to changes in the list as well (like additions and deletions)
+
+@ex15.html, line 7: The code #f=”form” is a form directive that informs Angular2 that this is a form, which should be handled by JavaScript code (prevents default onSubmit behavior)
+
+@ex15.html, line 8: #newname is actually a local variable (like I mentioned in example 14), which is passed to the addTo method. This doesn’t completely eliminate the need for class/controller logic, but it helps keep it to a minimum. Note: the addTo method declaration expects a string as input.

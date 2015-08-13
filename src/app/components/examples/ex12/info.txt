@@ -1,0 +1,5 @@
+(12) $scope, $apply, $watch
+
+With the removal of the $scope variable, came the removal of $apply and $watch also. Angular2 uses a library called ZoneJS for change detection, therefore $apply and $watch are not needed. This example is suppose to NOT work due to a lack of an $apply call. However my example instead illustrates event binding within the template.
+
+@ex12.html, line 2: (focus)=”delay()” binds the delay method to the focus event of the <input> element

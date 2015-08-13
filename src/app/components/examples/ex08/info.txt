@@ -1,0 +1,3 @@
+(8) Slightly more advanced MVC text input
+
+@ex08.html, lines 2-3: The [ ] syntax around ng-model means an ng-model attribute will be added to the respective DOM element. The ( ) syntax tells Angular2 to listen to the ‘ng-model’ event of this DOM element. This creates a slightly different two-way binding structure than Angular 1.x

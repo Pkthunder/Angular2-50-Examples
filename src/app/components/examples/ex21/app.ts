@@ -1,14 +1,15 @@
-import {Component, View, bootstrap, NgFor} from 'angular2/angular2';
+import {Component, View, NgFor} from 'angular2/angular2';
 
 import {Http, httpInjectables} from 'angular2/angular2';
 
-// Use webpack's `require` to get files as a raw string using raw-loader
-let template = require('./ex21.html');
+@Component({
+	selector: 'example21', 
+	viewInjector: [httpInjectables]
+})
 
-@Component({selector: 'example21', viewInjector: [httpInjectables]})
 @View({ 
-  template: template,
-  directives: [NgFor]
+	  templateUrl: '/app/components/examples/ex21/ex21.html',
+	  directives: [NgFor]
 })
 
 export class App21 {

@@ -1,13 +1,12 @@
-import {Component, View, bootstrap, NgFor, formDirectives, Control} from 'angular2/angular2';
-
-// Use webpack's `require` to get files as a raw string using raw-loader
-let template = require('./ex16.html');
+import {Component, View, NgFor, formDirectives} from 'angular2/angular2';
 
 @Component({selector: 'example16'})
+
 @View({ 
-  template: template,
+  templateUrl: '/app/components/examples/ex16/ex16.html',
   directives: [NgFor, formDirectives]
 })
+
 export class App16 {
 	names: Array<string>;
 	newname: string;

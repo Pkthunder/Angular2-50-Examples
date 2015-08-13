@@ -1,0 +1,7 @@
+(23) LimitTo
+
+As of now, no filter or orderby pipes are included in standalone Angular2, so this example demonstrates the LimitTo Pipe instead
+
+@app.ts, line 10: Add imported pipes to @Component via viewBindings parameter
+
+@ex23.html, line 8: “pipe_name: passed value” is a very common syntax for pipes, however custom pipes can be written and aren’t forced to maintain this convention (although it is a good idea to maintain it)

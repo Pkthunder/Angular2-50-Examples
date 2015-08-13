@@ -1,17 +1,20 @@
-import {Component, View, bootstrap, NgFor} from 'angular2/angular2';
+import {Component, View, NgFor} from 'angular2/angular2';
 
 import {Http, httpInjectables} from 'angular2/angular2';
 
+import {defaultPipes} from 'angular2/angular2';
+
 @Component({
-	selector: 'my-app', 
-	viewInjector: [httpInjectables]
+	selector: 'example31', 
+	viewInjector: [httpInjectables],
+	viewBindings: [defaultPipes]
 }) 
 @View({ 
-  templateUrl: './templates/ex31/ex31.html',
+  templateUrl: '/app/components/examples/ex31/ex31.html',
   directives: [NgFor]
 })
 
-export class AppComponent {
+export class App31 {
 	countries: Array<Object> = [];
 
 	constructor(public http: Http) {
@@ -19,7 +22,7 @@ export class AppComponent {
 		this.getData();
 	}
 	getData() {
-		this.http.get('./templates/ex31/countries.json')
+		this.http.get('/app/components/examples/ex30/countries.json')
 			.toRx()
 			.map(res => res.json())
 			.subscribe(data => this.onSuccess(data),

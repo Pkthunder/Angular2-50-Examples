@@ -1,0 +1,3 @@
+(18) NgFor over array of objects
+
+Just like in Angular 1.x, members of object can be accessed via the dot (.) operator within templates
