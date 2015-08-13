@@ -1,0 +1,5 @@
+(25) Passing data to Pipes
+
+@ex25.html, lines 2 and 8: Instead of hard coding values into the LimitTo Pipe, I can pass a variable (just like in Angular 1.x). In this example I created an NgModel called query and passed it to the LimitTo Pipe
+
+@app.ts, line 23: Defaults the query variable to 5 within the constructor

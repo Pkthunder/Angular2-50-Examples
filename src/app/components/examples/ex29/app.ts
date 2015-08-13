@@ -2,12 +2,14 @@ import {Component, View, NgFor} from 'angular2/angular2';
 
 import {Http, httpInjectables} from 'angular2/angular2';
 
-let template = require('./ex29.html');
+@Component({
+	selector: 'example29', 
+	viewInjector: [httpInjectables]
+})
 
-@Component({selector: 'example29', viewInjector: [httpInjectables]})
 @View({ 
-  template: template,
-  directives: [NgFor]
+  	templateUrl: '/app/components/examples/ex29/ex29.html',
+  	directives: [NgFor]
 })
 
 export class App29 {

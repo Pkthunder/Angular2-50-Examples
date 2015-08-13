@@ -1,0 +1,3 @@
+(26) Passing expressions to Pipes
+
+@ex25.html, line 8: This is the same example as the one before, however, instead of just “limitTo: query”, I’ve passed an expression “limitTo: (-1 * query)”. This limits the display to the last X entries

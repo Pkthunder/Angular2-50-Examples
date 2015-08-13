@@ -18,7 +18,6 @@ export class App31 {
 	countries: Array<Object> = [];
 
 	constructor(public http: Http) {
-		console.log("constructor called!");
 		this.getData();
 	}
 	getData() {

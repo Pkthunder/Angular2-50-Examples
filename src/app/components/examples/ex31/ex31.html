@@ -12,7 +12,7 @@
         <td>{{country.population}}</td>
         <td><img src="{{country.flagURL}}" width="100"></td>
         <td>{{country.capital}}</td>
-        <!-- currency: currencyCode: useSymbol: digits after decimal range -->
+        <!-- currency: currencyCode: useSymbol: number (range of digits after decimal) -->
         <td>{{country.gdp | currency: 'USD': true: '.2-2'}}</td>
       </tr>
     </table>

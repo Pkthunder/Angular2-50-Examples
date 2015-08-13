@@ -1,0 +1,3 @@
+(27) Adding country flag images
+
+Just like Angular 1.x, {{ var }} syntax can be applied to DOM element attributes as well

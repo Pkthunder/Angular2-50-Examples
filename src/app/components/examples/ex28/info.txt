@@ -1,0 +1,3 @@
+(28) Ng-src
+
+I never found this in writing, but ng-src was added to Angular 1.x because browser would start to fetch from the urls with the unresolved Angular {{ hash }} variables in the src attribute. ngSrc prevents this from happening. However, Angular2 uses a ShadowDOM, which sits at a higher level of abstraction than Angular 1.x. Because of this, the Light DOM (or the DOM the client’s browser renders) should never have any unresolved {{ hash }} values. Therefore, there is no need for ngSrc.

@@ -1,19 +1,26 @@
-import {Component, View, bootstrap, NgFor} from 'angular2/angular2';
+import {Component, View, NgFor} from 'angular2/angular2';
 
 import {Http, httpInjectables} from 'angular2/angular2';
 
-let template = require('./ex25.html');
+import {defaultPipes, formDirectives} from 'angular2/angular2';
 
-@Component({selector: 'example25', viewInjector: [httpInjectables]})
+@Component({
+	selector: 'example25', 
+	viewInjector: [httpInjectables],
+	viewBindings: [defaultPipes]
+})
+
 @View({ 
-  template: template,
-  directives: [NgFor]
+  templateUrl: '/app/components/examples/ex25/ex25.html',
+  directives: [NgFor, formDirectives]
 })
 
 export class App25 {
+	query: number;
 	countries: Array<Object> = [];
 
 	constructor(public http: Http) {
+		this.query = 5; //defaults to 5
 		this.getData();
 	}
 	getData() {

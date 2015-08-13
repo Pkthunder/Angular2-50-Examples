@@ -1,0 +1,5 @@
+(31) Formatting Pipes
+
+Pipes can be used to format data, as well as filter it.
+
+@ex31.html, line 16: Here I am using the currency pipe to format the GDP data. The currency pipe takes 3 arguments: currencyCode (string), useSymbol (bool), number (string). The number parameter is actually a pipe itself. The number pipe allows you to format numbers. The ‘.2-2’ syntax means the range of digits after the decimal. In this example I always show 2. However, I could of done ‘.1-3’, which would show at least one decimal digit and maxing at three decimal digits.
