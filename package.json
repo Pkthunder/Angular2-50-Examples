@@ -3,6 +3,10 @@
   "version": "0.0.0",
   "description": "Learn Angular2 through 50 examples",
   "main": "",
+  "engines": {
+    "node": "0.12.4",
+    "npm": "2.13.2"
+  },
   "scripts": {
     "build": "npm run build:dev && npm run build:prod",
     "build:dev": " npm run env:dev  npm run webpack --colors --display-error-details --display-cached",
