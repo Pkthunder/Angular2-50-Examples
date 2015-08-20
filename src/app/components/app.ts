@@ -205,7 +205,7 @@ class TextLoader {
       </div>
     </header>
 
-    <main>
+    <main (keyup)="navigate($event)">
       <div>
         <div class="text-wrapper">
           <h3>Explanation</h3>
@@ -235,6 +235,9 @@ class TextLoader {
 })
 @RouteConfig([
   { path: '/',      as: 'home',    component: Home },
+  { path: '/7',    redirectTo: '/07' },
+  { path: '/8',    redirectTo: '/08' },
+  { path: '/9',    redirectTo: '/09' },
   { path: '/07',    as: '07',      component: App7 },
   { path: '/08',    as: '08',      component: App8 },
   { path: '/09',    as: '09',      component: App9 },
@@ -267,13 +270,14 @@ export class App {
   TSfile: string;
   HTMLfile: string;
   lastUrl: string;
-  infoText: string;
+  example: number;
 
   constructor(public router: Router) {
     // grabs current example number
     var url = window.location.href;
     url = url.split('://')[1];
     var exNum = url.split('/')[1];
+    this.example = parseInt(exNum);
 
     // sets template variables
     this.name = 'angular'; // used in logo
@@ -283,10 +287,6 @@ export class App {
     // reloads page on router navigation to update file displays
     this.lastUrl = window.location.href;
     this.router.subscribe( () => this.isNext() );
-
-    console.log("hello!", this.router);
-    this.print();
-
   }
 
   isNext() {
@@ -295,8 +295,16 @@ export class App {
     }
   }
 
-  print() {
-    console.log("hello!", this.router);
+  navigate(e: any) {
+    console.log("Keyup!");
+    if (e.which === 37 && this.example > 7) {
+      console.log("To the right!");
+      this.router.navigate('/' + (this.example-1) );
+    }
+    else if (e.which === 39 && this.example < 31) {
+      console.log("To the left!");
+      this.router.navigate('/' + (this.example+1) );
+    }
   }
 
 }
