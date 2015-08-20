@@ -2,6 +2,10 @@
   "name": "50 Examples of Angular2",
   "version": "0.0.0",
   "description": "Learn Angular2 through 50 examples",
+  "engines": {
+    "node": "0.12.4",
+    "npm": "2.13.2"
+  },
   "main": "",
   "scripts": {
     "build": "npm run build:dev && npm run build:prod",
@@ -37,10 +41,6 @@
     "url": "https://github.com/Pkthunder/Angular2-50-Examples/issues"
   },
   "homepage": "https://github.com/Pkthunder/Angular2-50-Examples",
-  "engines": {
-    "node": "0.12.4",
-    "npm": "2.13.2"
-  },
   "dependencies": {
     "angular2": "2.0.0-alpha.32",
     "reflect-metadata": "^0.1.0",
